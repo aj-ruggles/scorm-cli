@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Scorm Packer CLI",
   "main": "bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aj-ruggles/scorm-cli.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

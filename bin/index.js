@@ -2,7 +2,6 @@
 
 const yargs = require("yargs");
 const scopackager = require('simple-scorm-packager');
-const path = require('path');
 
 const options = yargs
  .usage("Usage: -n <name>")
@@ -12,6 +11,7 @@ const options = yargs
  .option("c", { alias: "company", description: "Name of your company", type: "string", demandOption: false })
  .argv;
 
+
 const config = {
     version: '2004 3rd Edition',
     organization: options.company || "Default Company Inc." ,
@@ -19,7 +19,7 @@ const config = {
     language: 'en-US',
     masteryScore: 100,
     startingPage: 'index.html',
-    source: path.join(__dirname),
+    source: process.cwd(),
     package: {
       version: '0.1.0',
       author: process.env.USERNAME,
