@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const yargs = require("yargs");
 const scopackager = require('simple-scorm-packager');
 const path = require('path');
