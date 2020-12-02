@@ -7,11 +7,12 @@ const options = yargs
  .option("n", { alias: "name", describe: "Name of the Package", type: "string", demandOption: true })
  .option("d", { alias: "description", description: "Description for the package", type: "string", demandOption: false })
  .option("t", { alias: "time", description: "Time to complete course EX:\"PT0H0M0S\"", type: "string", demandOption: false })
+ .option("c", { alias: "company", description: "Name of your company", type: "string", demandOption: false })
  .argv;
 
 const config = {
     version: '2004 3rd Edition',
-    organization: 'Pinnacle Solutions Inc',
+    organization: options.company || "Default Company Inc." ,
     title: options.name,
     language: 'en-US',
     masteryScore: 100,
@@ -23,7 +24,7 @@ const config = {
       description: options.description || "Course Description",
       keywords: ['scorm', 'IMI', 'course'],
       typicalDuration: options.time || "PT0H0M0S",
-      rights: `©${new Date().getFullYear()} Pinnacle Solutions Inc. All right reserved.`,
+      rights: `©${new Date().getFullYear()} ${options.company || "Default Company Inc."}. All right reserved.`,
     },
   };
 
